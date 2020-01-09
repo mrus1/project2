@@ -1,21 +1,15 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Set display_name
-  if (!localStorage.getItem('display_name')) {
-    console.log("display_name is not set")
-    document.getElementById('noDisplayName').style.display = "block";
-
-    // Get new display_name
-    document.querySelector('#setDisplayName').onsubmit = () => {
-      const display_name = document.querySelector('#displayName').value;
-      if ( display_name != '')
-        localStorage.setItem('display_name', display_name)
-      else
-        alert("empty name not allowed")
-    }
-
-  } else {
-    console.log('display name exists')
-    document.getElementById('enterRooms').style.display = "block";
-    document.querySelector('#user').innerHTML = localStorage.getItem('display_name');
+// Prompt when user first visits
+if (!localStorage.getItem('display_name')) {
+  let getName = window.prompt("Enter your nickname:")
+  while (getName == null || getName == "" || !getName.match(/^[0-9a-zA-Z]+$/)){
+    getName = window.prompt("Please input alphanumeric characters only (a-zA-Z0-9).")
   }
+  localStorage.setItem('display_name', getName)
+};
+
+// Set display name globaly
+document.addEventListener("DOMContentLoaded", () => {
+  const display_name = localStorage.getItem('display_name')
+
+  document.querySelector('#display_name').innerHTML = display_name;
 });
