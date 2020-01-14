@@ -18,8 +18,11 @@
     <input type="text" id="get-channel" autocomplete="off" autofocus placeholder="New Channel">
     <input type="submit" id="submit">
   </form>
-
+  <p id="error1">This channel already exists.</p>
   <ul id="channels">
+    {% for channel in channels_list %}
+      <li>{{ channels_list[channel] }}</li>
+    {% endfor %}
   </ul>
 
 {% endblock %}
