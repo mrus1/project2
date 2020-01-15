@@ -3,6 +3,9 @@
 {% block javascript %}
   <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 {% endblock %}
+{% block css %}
+  <link rel="stylesheet" href="../static/index.css">
+{% endblock %}
 
 {% block title %}
   Flack Chatrooms
@@ -19,10 +22,10 @@
     <input type="submit" id="submit">
   </form>
   <p id="error1">This channel already exists.</p>
-  <ul id="channels">
+  <div id="channels">
     {% for channel in channels_list %}
-      <li>{{ channels_list[channel] }}</li>
+      <a href="{{ url_for('channel', channel_name=channels_list[channel]) }}">{{ channels_list[channel] }}</a>
     {% endfor %}
-  </ul>
+  </div>
 
 {% endblock %}

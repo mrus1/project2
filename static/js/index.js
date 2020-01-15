@@ -59,11 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const last = Object.values(data).slice(-1)
 
       // Create new chanel to show on page
-      const li = document.createElement('li');
-      li.innerHTML = last;
+      const a = document.createElement('a')
+      a.innerHTML = last;
+      a.setAttribute("href", "channel-" + last)
 
       // Add new channel to channels list
-      document.querySelector('#channels').append(li);
+      document.querySelector('#channels').append(a);
       error1 = false;
     } else {
       error1 = true;

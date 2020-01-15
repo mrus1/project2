@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
@@ -25,6 +25,9 @@ def handle_channels(data):
         channels_list[count] = channel_new
         emit("channel name", channels_list, broadcast=True)
 
+@app.route("/channel-<channel_name>", methods=["GET", "POST"])
+def channel(channel_name):
+    return render_template("channel.html", channel_name=channel_name)
 
 if __name__ == '__main__':
     socketio.run(app, debug=True)
