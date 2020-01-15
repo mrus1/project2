@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Add new channel to channels list
       document.querySelector('#channels').append(a);
+      window.location.reload() //Not the best solution =)
       error1 = false;
     } else {
       error1 = true;

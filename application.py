@@ -25,8 +25,10 @@ def handle_channels(data):
         channels_list[count] = channel_new
         emit("channel name", channels_list, broadcast=True)
 
+
 @app.route("/channel-<channel_name>", methods=["GET", "POST"])
 def channel(channel_name):
+    print(channels_list)
     return render_template("channel.html", channel_name=channel_name)
 
 if __name__ == '__main__':
