@@ -1,0 +1,52 @@
+body {
+  background-color: darkgrey;
+}
+
+.chatbox-area {
+  margin: 0 auto;
+  position: relative;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+}
+
+#chatform {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  max-width: 35em;
+  margin: 0 auto;
+  padding-top: 1em;
+  font-size: 1em;
+}
+
+textarea[name=chatbox] {
+  resize: none;
+  border: 2px solid green;
+  border-right: 0;
+  background-color: transparent;
+  width: 70%;
+  color: #fff;
+  height: 1.8em;
+  margin: 0;
+  padding: 0.75em;
+  border-radius: 8px 0 0 8px;
+  font-size: 1.2em;
+}
+textarea[name=chatbox]:focus {
+  outline: none;
+  border: 2px solid #00cd00;
+}
+
+input[type=submit] {
+  width: 25%;
+  margin: 0;
+  background-color: green;
+  color: #fff;
+  border: 2px solid green;
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.2em;
+}
+
+/*# sourceMappingURL=channel.css.map */

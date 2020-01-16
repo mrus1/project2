@@ -1,11 +1,32 @@
 {% extends "layout.html" %}
 
+{% block javascript %}
+  <script src="{{ url_for('static', filename='js/channel.js') }}"></script>
+{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="../static/channel.css">
+{% endblock %}
+
 {% block title %}
   Channel
 {% endblock %}
 
 {% block body %}
 
-  <label for="conversation">{{ channel_name }}</label>
+  <h1>Chat Room: {{ channel_name }}</h1>
+
+  <div class="response-display">
+    <label id="display_name"></label>
+    <p></p>
+  </div>
+
+  <div class="chatbox-area">
+    <form id="chatform">
+        <textarea autofocus name="chatbox" rows="1" cols="50"></textarea>
+        <input class="submit-text" type="submit" value="Send">
+    </form>
+  </div>
+
 
 {% endblock %}
