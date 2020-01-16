@@ -10,7 +10,7 @@ body {
   width: 100%;
 }
 
-#chatform {
+#chat-form {
   display: flex;
   justify-content: center;
   width: 80%;
@@ -21,6 +21,7 @@ body {
 }
 
 textarea[name=chatbox] {
+  overflow: hidden;
   resize: none;
   border: 2px solid green;
   border-right: 0;

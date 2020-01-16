@@ -31,5 +31,10 @@ def channel(channel_name):
     print(channels_list)
     return render_template("channel.html", channel_name=channel_name)
 
+@socketio.on('submit message')
+def handle_message(data):
+    new_message = data["new-message"]
+    emit('send message', new_message, broadcast=True)
+
 if __name__ == '__main__':
     socketio.run(app, debug=True)

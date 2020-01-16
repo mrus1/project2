@@ -17,14 +17,17 @@
   <h1>Chat Room: {{ channel_name }}</h1>
 
   <div class="response-display">
-    <label id="display_name"></label>
-    <p></p>
+    <label id="display-name"></label>
+  </div>
+
+  <div id="messages">
+    
   </div>
 
   <div class="chatbox-area">
-    <form id="chatform">
-        <textarea autofocus name="chatbox" rows="1" cols="50"></textarea>
-        <input class="submit-text" type="submit" value="Send">
+    <form id="chat-form">
+        <textarea type="text" autocomplete="off" autofocus name="chatbox"></textarea>
+        <input class="send-button" type="submit">
     </form>
   </div>
 
